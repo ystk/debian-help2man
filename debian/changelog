@@ -1,3 +1,9 @@
+help2man (1.38.2-skerlet1) unstable; urgency=low
+
+  * Disable sanity check for build
+
+ -- Skerlet Development Team <skerlet@swc.toshiba.co,jp>  Fri, 12 Oct 2012 17:57:51 +0900
+
 help2man (1.38.2) unstable; urgency=low
 
   * Update Finnish translation (thanks to Tommi Vainikainen).
