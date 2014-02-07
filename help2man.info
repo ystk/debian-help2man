@@ -1,7 +1,7 @@
 This is help2man.info, produced by makeinfo version 4.13 from
 help2man.texi.
 
-INFO-DIR-SECTION GNU programming support
+INFO-DIR-SECTION Software development
 START-INFO-DIR-ENTRY
 * help2man: (help2man).      Automatic manual page generation.
 END-INFO-DIR-ENTRY
@@ -9,8 +9,8 @@ END-INFO-DIR-ENTRY
    This file documents the GNU `help2man' command which produces simple
 manual pages from the `--help' and `--version' output of other commands.
 
-   Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, 2010
-Free Software Foundation, Inc.
+   Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, 2010,
+2011 Free Software Foundation, Inc.
 
    Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
@@ -39,10 +39,11 @@ File: help2man.info,  Node: Top,  Next: Overview,  Up: (dir)
 
 * Overview::                    Overview of `help2man'.
 * Invoking help2man::           How to run `help2man'.
-* Including text::              Including additional text in the output.
 * --help recommendations::      Recommended formatting for --help output.
+* Including text::              Including additional text in the output.
 * Makefile usage::              Using `help2man' with `make'.
 * Localised man pages::         Producing native language manual pages.
+* Example::                     Example `help2man' output.
 * Reports::                     Reporting bugs or suggestions.
 * Availability::                Obtaining `help2man'.
 
@@ -67,7 +68,7 @@ maintain that document.
 something which resembles a manual page.
 
 
-File: help2man.info,  Node: Invoking help2man,  Next: Including text,  Prev: Overview,  Up: Top
+File: help2man.info,  Node: Invoking help2man,  Next: --help recommendations,  Prev: Overview,  Up: Top
 
 2 How to Run `help2man'
 ***********************
@@ -135,6 +136,12 @@ The format for running the `help2man' program is:
      Suppress inclusion of a `SEE ALSO' paragraph directing the reader
      to the Texinfo documentation.
 
+`-l'
+`--libtool'
+     Drop `lt-' prefix from instances of the program name in the
+     synopsis (`libtool' creates wrapper scripts in the build directory
+     which invoke `foo' as `.libs/lt-foo').
+
 `--help'
 `--version'
      Show help or version information.
@@ -157,7 +164,7 @@ options to the executable although alternatives may be specified using:
      Include stderr when parsing option output.
 
 
-File: help2man.info,  Node: --help recommendations,  Next: Makefile usage,  Prev: Including text,  Up: Top
+File: help2man.info,  Node: --help recommendations,  Next: Including text,  Prev: Invoking help2man,  Up: Top
 
 3 `--help' Recommendations
 **************************
@@ -166,9 +173,9 @@ Here are some recommendations for what to include in your `--help'
 output.  Including these gives `help2man' the best chance at generating
 a respectable man page, as well as benefitting users directly.
 
-   *Note Command-Line Interfaces: (GNU Coding Standards)Command-Line
-Interfaces, and *note Man Pages: (GNU Coding Standards)Man Pages, for
-the official GNU standards relating to `--help' and man pages.
+   *Note Command-Line Interfaces: (standards)Command-Line Interfaces,
+and *note Man Pages: (standards)Man Pages, for the official GNU
+standards relating to `--help' and man pages.
 
    * A synopsis of how to invoke the program.  If different usages of
      the program have different invocations, then list them all.  For
@@ -232,7 +239,7 @@ option definition; you may wish to consider using these routines for
 option parsing instead of `getopt'.
 
 
-File: help2man.info,  Node: Including text,  Next: --help recommendations,  Prev: Invoking help2man,  Up: Top
+File: help2man.info,  Node: Including text,  Next: Makefile usage,  Prev: --help recommendations,  Up: Top
 
 4 Including Additional Text in the Output
 *****************************************
@@ -285,7 +292,7 @@ the standard sections given above, or included at _other_ (above) in
 the order they were encountered in the include file.
 
 
-File: help2man.info,  Node: Makefile usage,  Next: Localised man pages,  Prev: --help recommendations,  Up: Top
+File: help2man.info,  Node: Makefile usage,  Next: Localised man pages,  Prev: Including text,  Up: Top
 
 5 Using `help2man' With `make'
 ******************************
@@ -314,15 +321,19 @@ included in the distribution without requiring the end-user to have
    for `autoconf' alone.
 
 
-File: help2man.info,  Node: Localised man pages,  Next: Reports,  Prev: Makefile usage,  Up: Top
+File: help2man.info,  Node: Localised man pages,  Next: Example,  Prev: Makefile usage,  Up: Top
 
-6 Producing Native Language Manual Pages.
-*****************************************
+6 Producing Native Language Manual Pages
+****************************************
 
 Manual pages may be produced for any locale supported by both the
-program and `help2man'(1) with the `--locale' (`-L') option.
+program and `help2man' with the `--locale' (`-L') option.
 
      help2man -L fr_FR@euro -o cp.fr.1 cp
+
+   See `http://translationproject.org/domain/help2man.html' for the
+languages currently supported by `help2man', and *note Reports:: for
+how to submit other translations.
 
 6.1 Changing the Location of Message Catalogs
 =============================================
@@ -333,9 +344,9 @@ will not be (if installed at all) correct for the version of the
 program being built.
 
    A preloadable library is provided with `help2man' which will
-intercept `gettext' calls configuring the location of message catalogs
-for the domain given by `$TEXTDOMAIN' and override the location to the
-path given by `$LOCALEDIR'.
+intercept `bindtextdomain' calls configuring the location of message
+catalogs for the domain given by `$TEXTDOMAIN' and override the
+location to the path given by `$LOCALEDIR'.
 
    So for example:
 
@@ -355,55 +366,147 @@ path given by `$LOCALEDIR'.
      done by `gettext', if a more specific match were available it
      would also have been re-mapped.
 
-   * The inclusion of `preloadable_libintl.so' in `$LD_PRELOAD' is
-     required only for cases (such as `glibc') where `gettext' is built
-     into libc (where `__open' would otherwise be satisfied internally).
-
-   * This preload hack has only been tested against `glibc' 2.3.1 and
-     `gettext' 2.3.1 on a GNU/Linux system; let me know if it does (or
-     doesn't) work for you (*note Reports::).
-
-   ---------- Footnotes ----------
-
-   (1) `help2man' currently supports `de_DE', `fi_FI', `fr_FR', `pl_PL',
-`pt_BR' and `sv_SE' (*note Reports:: for how to submit other
-translations).
+   * This preload has only been tested against `eglibc' 2.11.2 and
+     `gettext' 0.18.1.1 on a GNU/Linux system; let me know if it does
+     (or doesn't) work for you (*note Reports::).
 
 
-File: help2man.info,  Node: Reports,  Next: Availability,  Prev: Localised man pages,  Up: Top
+File: help2man.info,  Node: Example,  Next: Reports,  Prev: Localised man pages,  Up: Top
 
-7 Reporting Bugs or Suggestions
+7 Example `help2man' Output
+***************************
+
+Given a hypothetical program `foo' which produces the following output:
+
+     $ foo --version
+     GNU foo 1.1
+
+     Copyright (C) 2011 Free Software Foundation, Inc.
+     This is free software; see the source for copying conditions.  There is NO
+     warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+     Written by A. Programmer.
+     $ foo --help
+     GNU `foo' does nothing interesting except serve as an example for
+     `help2man'.
+
+     Usage: foo [OPTION]...
+
+     Options:
+       -a, --option      an option
+       -b, --another-option[=VALUE]
+                         another option
+
+           --help        display this help and exit
+           --version     output version information and exit
+
+     Examples:
+       foo               do nothing
+       foo --option      the same thing, giving `--option'
+
+     Report bugs to <bug-gnu-utils@gnu.org>.
+
+   `help2man' will produce `nroff' input for a manual page which will
+be formatted something like this:
+
+     FOO(1)                         User Commands                        FOO(1)
+
+
+     NAME
+            foo - manual page for foo 1.1
+
+     SYNOPSIS
+            foo [OPTION]...
+
+     DESCRIPTION
+            GNU  `foo'  does nothing interesting except serve as an example for
+            `help2man'.
+
+     OPTIONS
+            -a, --option
+                   an option
+
+            -b, --another-option[=VALUE]
+                   another option
+
+            --help display this help and exit
+
+            --version
+                   output version information and exit
+
+     EXAMPLES
+            foo    do nothing
+
+            foo --option
+                   the same thing, giving `--option'
+
+     AUTHOR
+            Written by A. Programmer.
+
+     REPORTING BUGS
+            Report bugs to <bug-gnu-utils@gnu.org>.
+
+     COPYRIGHT
+            Copyright (C) 2011 Free Software Foundation, Inc.
+            This is free software;  see  the  source  for  copying  conditions.
+            There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+            PARTICULAR PURPOSE.
+
+     SEE ALSO
+            The full documentation for foo is maintained as a  Texinfo  manual.
+            If  the  info and foo programs are properly installed at your site,
+            the command
+
+                   info foo
+
+            should give you access to the complete manual.
+
+
+     foo 1.1                          May 2011                           FOO(1)
+
+
+File: help2man.info,  Node: Reports,  Next: Availability,  Prev: Example,  Up: Top
+
+8 Reporting Bugs or Suggestions
 *******************************
 
 If you find problems or have suggestions about this program or manual,
 please report them to <bug-help2man@gnu.org>.
 
-   Note to translators:  when submitting new translations for
-`po/help2man.pot' please additionally translate `help2man.h2m' (used to
-augment the manual pages for `help2man').
+   Note to translators: Translations are handled though the Translation
+Project (http://translationproject.org/) see
+`http://translationproject.org/html/translators.html' for details.
 
 
 File: help2man.info,  Node: Availability,  Prev: Reports,  Up: Top
 
-8 Obtaining `help2man'
+9 Obtaining `help2man'
 **********************
 
-The latest version of this distribution is available on-line from:
+The latest version of this distribution is available online from GNU
+mirrors:
 
-     `ftp://ftp.gnu.org/gnu/help2man/'
+     `http://ftpmirror.gnu.org/help2man/'
+
+   If automatic redirection fails, the list of mirrors is at:
+
+     `http://www.gnu.org/order/ftp.html'
+
+   Or if need be you can use the main GNU ftp server:
+     `http://ftp.gnu.org/gnu/help2man/'
 
 
 
 Tag Table:
-Node: Top1131
-Node: Overview1838
-Node: Invoking help2man2545
-Node: --help recommendations4896
-Node: Including text8314
-Node: Makefile usage10025
-Node: Localised man pages10964
-Ref: Localised man pages-Footnote-112875
-Node: Reports13025
-Node: Availability13483
+Node: Top1134
+Node: Overview1900
+Node: Invoking help2man2607
+Node: --help recommendations5165
+Node: Including text8564
+Node: Makefile usage10272
+Node: Localised man pages11203
+Node: Example13039
+Node: Reports15644
+Node: Availability16098
 
 End Tag Table

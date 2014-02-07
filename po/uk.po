@@ -1,23 +1,22 @@
-# translation of help2man-1.38.1.ru.po to Russian
-# Copyright (C) 2010 Free Software Foundation, Inc.
+# Ukrainian translation for help2man.
+# Copyright (C) 2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the help2man package.
 #
-# Yuri Kozlov <yuray@komyakino.ru>, 2010, 2011, 2012.
+# Yuri Chornoivan <yurchor@ukr.net>, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: help2man 1.40.7\n"
 "Report-Msgid-Bugs-To: Brendan O'Dea <bug-help2man@gnu.org>\n"
 "POT-Creation-Date: 2012-04-08 23:16+1000\n"
-"PO-Revision-Date: 2012-04-07 09:29+0400\n"
-"Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
-"Language-Team: Russian <gnu@mx.ru>\n"
-"Language: ru\n"
+"PO-Revision-Date: 2012-04-06 06:25+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <translation-team-uk@lists.sourceforge.net>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: help2man:68
 #, perl-format
@@ -34,14 +33,13 @@ msgid ""
 msgstr ""
 "GNU %s %s\n"
 "\n"
-"Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, "
-"2010,\n"
-"2011, 2012 Free Software Foundation, Inc.\n"
-"Это свободное ПО; условия копирования см. в исходном коде.\n"
-"Нет НИКАКИХ ГАРАНТИЙ; даже подразумеваемыми гарантиями\n"
-"КОММЕРЧЕСКОЙ ЦЕННОСТИ и ПРИГОДНОСТИ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ.\n"
+"© Free Software Foundation, Inc., 1997, 1998, 1999, 2000, 2001, 2002, 2003, "
+"2004, 2005, 2009, 2010, 2011, 2012\n"
+"Це програмне забезпечення є вільним, умови копіювання викладено у його "
+"початкових кодах. Умовами ліцензування програми НЕ передбачено жодних "
+"гарантій, зокрема гарантій працездатності або придатності для певної мети.\n"
 "\n"
-"Автор: Брэндон О'Ди (Brendan O'Dea) <bod@debian.org>\n"
+"Автором програми є Brendan O'Dea <bod@debian.org>\n"
 
 #: help2man:79
 #, perl-format
@@ -75,44 +73,47 @@ msgid ""
 "\n"
 "Report bugs to <bug-help2man@gnu.org>.\n"
 msgstr ""
-"%s генерирует справочную страницу исходя из результатов --help и --version.\n"
+"%s створює сторінку довідника (man) на основі даних виконання програми з "
+"параметрами --help та --version.\n"
 "\n"
-"Использование: %s [ПАРАМЕТР]... ИСПОЛНЯЕМЫЙ_ФАЙЛ\n"
+"Використання: %s [ПАРАМЕТР]... ВИКОНУВАНИЙ_ФАЙЛ\n"
 "\n"
-" -n, --name=СТРОКА       описание для параграфа ИМЯ\n"
-" -s, --section=РАЗДЕЛ    номер раздела справочной страницы (1, 6, 8)\n"
-" -m, --manual=ТЕКСТ      имя справочника (Пользовательские команды, ...)\n"
-" -S, --source=ТЕКСТ      источник программы (FSF, Debian, ...)\n"
-" -L, --locale=СТРОКА     задать локаль (по умолчанию «C»)\n"
-" -i, --include=ФАЙЛ      включить материал из ФАЙЛА\n"
-" -I, --opt-include=ФАЙЛ  включить материал из ФАЙЛА, если он есть\n"
-" -o, --output=ФАЙЛ       записать результат в ФАЙЛ\n"
-" -p, --info-page=ТЕКСТ   имя справочника Texinfo\n"
-" -N, --no-info           не выдавать указатель на справочник Texinfo\n"
-" -l, --libtool           исключить lt- из имени программы\n"
-"     --help              показать эту справку и закончить работу\n"
-"     --version           показать номер версии и закончить работу\n"
+" -n, --name=РЯДОК        опис для розділу НАЗВА\n"
+" -s, --section=РОЗДІЛ    номер розділу для сторінки довідника (1, 6, 8)\n"
+" -m, --manual=ТЕКСТ      назва довідника (Команди користувача...)\n"
+" -S, --source=ТЕКСТ      джерело програми (FSF, Debian, ...)\n"
+" -L, --locale=РЯДОК      вибрати локаль (типове значення \"C\")\n"
+" -i, --include=ФАЙЛ      включити матеріали з ФАЙЛа\n"
+" -I, --opt-include=ФАЙЛ  включити матеріали з ФАЙЛа, якщо такий існує\n"
+" -o, --output=ФАЙЛ       надіслати виведені дані до ФАЙЛа\n"
+" -p, --info-page=ТЕКСТ   назва довідника Texinfo\n"
+" -N, --no-info           придушити посилання на підручник Texinfo\n"
+" -l, --libtool           виключити «lt-» з назви програми\n"
+"     --help              показати ці довідкові дані, потім завершити роботу\n"
+"     --version           показати дані щодо версії, потім завершити роботу\n"
 "\n"
-"ИСПОЛНЯЕМЫЙ_ФАЙЛ должен принимать параметры --help и --version и выдавать\n"
-"результат в стандартный вывод, но можно указать альтернативные параметры:\n"
+"У ВИКОНУВАНОМУ_ФАЙЛІ має бути передбачено використання параметрів «--help» "
+"та «--version» з виведенням\n"
+"даних до stdout. Ви можете внести зміни до цих типових вимог за допомогою "
+"таких параметрів:\n"
 "\n"
-" -h, --help-option=СТРОКА     строка параметра для получения справки\n"
-" -v, --version-option=СТРОКА  строка параметра для получения версии\n"
-" --version-string=СТРОКА      строка версии\n"
-" --no-discard-stderr          анализировать stderr при разборе\n"
-"                              результатов параметра\n"
+" -h, --help-option=РЯДОК      рядок параметра виведення довідкових даних\n"
+" -v, --version-option=РЯДОК   рядок параметра виведення даних щодо версії\n"
+" --version-string=РЯДОК       рядок версії\n"
+" --no-discard-stderr          використовувати дані зі stderr під час обробки "
+"виведених даних\n"
 "\n"
-"Об ошибках сообщайте по адресу: <bug-help2man@gnu.org>.\n"
+"Про вади повідомляйте на адресу <bug-help2man@gnu.org>.\n"
 
 #: help2man:163
 #, perl-format
 msgid "%s: can't open `%s' (%s)"
-msgstr "%s: не удалось открыть «%s» (%s)"
+msgstr "%s: не вдалося відкрити «%s» (%s)"
 
 #: help2man:224
 #, perl-format
 msgid "%s: no valid information found in `%s'"
-msgstr "%s: не найдено допустимой информации в «%s»"
+msgstr "%s: у `%s' не виявлено належних даних"
 
 #. Translators: the following message is a strftime(3) format string, which in
 #. the English version expands to the month as a word and the full year.  It
@@ -125,36 +126,36 @@ msgstr "%x"
 #: help2man:251
 #, perl-format
 msgid "%s: can't unlink %s (%s)"
-msgstr "%s: не удалось удалить %s (%s)"
+msgstr "%s: не вдалося вилучити %s (%s)"
 
 #: help2man:255
 #, perl-format
 msgid "%s: can't create %s (%s)"
-msgstr "%s: не удалось создать %s (%s)"
+msgstr "%s: не вдалося створити %s (%s)"
 
 #. Translators: "NAME", "SYNOPSIS" and other one or two word strings in all
 #. upper case are manual page section headings.  The man(1) manual page in your
 #. language, if available should provide the conventional translations.
 #: help2man:297 help2man:619 help2man.h2m.PL:81 help2man.h2m.PL:131
 msgid "NAME"
-msgstr "ИМЯ"
+msgstr "НАЗВА"
 
 #: help2man:309
 #, perl-format
 msgid "%s \\- manual page for %s %s"
-msgstr "%s \\- справочная страница для %s %s"
+msgstr "%s \\— сторінка довідника для %s %s"
 
 #: help2man:323
 msgid "System Administration Utilities"
-msgstr "Утилиты управления системой"
+msgstr "Інструменти системного адміністрування"
 
 #: help2man:324
 msgid "Games"
-msgstr "Игры"
+msgstr "Ігри"
 
 #: help2man:325
 msgid "User Commands"
-msgstr "Пользовательские команды"
+msgstr "Команди користувача"
 
 #. Translators: "Usage" and "or" here are patterns (regular expressions) which
 #. are used to match the usage synopsis in program output.  An example from cp
@@ -164,19 +165,19 @@ msgstr "Пользовательские команды"
 #. or:  cp [OPTION]... -t DIRECTORY SOURCE...
 #: help2man:336
 msgid "Usage"
-msgstr "Использование"
+msgstr "Використання"
 
 #: help2man:337
 msgid "or"
-msgstr "или"
+msgstr "або"
 
 #: help2man:369 help2man:619 help2man.h2m.PL:132
 msgid "SYNOPSIS"
-msgstr "ОБЗОР"
+msgstr "КОРОТКИЙ ОПИС"
 
 #: help2man:373 help2man:619 help2man.h2m.PL:133
 msgid "DESCRIPTION"
-msgstr "ОПИСАНИЕ"
+msgstr "ОПИС"
 
 #. Translators: patterns are used to match common program output. In the source
 #. these strings are all of the form of "my $PAT_something = _('...');" and are
@@ -188,55 +189,55 @@ msgstr "ОПИСАНИЕ"
 #. be matched.
 #: help2man:398
 msgid "Report +(?:[\\w-]+ +)?bugs|Email +bug +reports +to"
-msgstr "Об ошибках сообщайте по адресу:"
+msgstr "Про +(?:[\\w-]+ +)?вади повідомляйте|Надсилайте +звіти +щодо +вад"
 
 #: help2man:399
 msgid "Written +by"
-msgstr "Автор:"
+msgstr "Автор —"
 
 #: help2man:400
 msgid "Options"
-msgstr "Параметры"
+msgstr "Параметри"
 
 #: help2man:401
 msgid "Environment"
-msgstr "Окружение"
+msgstr "Середовище"
 
 #: help2man:402
 msgid "Files"
-msgstr "Файлы"
+msgstr "Файли"
 
 #: help2man:403
 msgid "Examples"
-msgstr "Примеры"
+msgstr "Приклади"
 
 #: help2man:404
 msgid "This +is +free +software"
-msgstr "Это +свободное +ПО"
+msgstr "Це +вільне +програмне +забезпечення"
 
 #: help2man:420 help2man:619 help2man.h2m.PL:134
 msgid "OPTIONS"
-msgstr "ПАРАМЕТРЫ"
+msgstr "ПАРАМЕТРИ"
 
 #: help2man:425 help2man:620 help2man.h2m.PL:135
 msgid "ENVIRONMENT"
-msgstr "ОКРУЖЕНИЕ"
+msgstr "СЕРЕДОВИЩЕ"
 
 #: help2man:430 help2man:620 help2man.h2m.PL:136
 msgid "FILES"
-msgstr "ФАЙЛЫ"
+msgstr "ФАЙЛИ"
 
 #: help2man:435 help2man:620 help2man.h2m.PL:137
 msgid "EXAMPLES"
-msgstr "ПРИМЕРЫ"
+msgstr "ПРИКЛАДИ"
 
 #: help2man:442 help2man:622 help2man.h2m.PL:141
 msgid "COPYRIGHT"
-msgstr "COPYRIGHT"
+msgstr "Авторські права"
 
 #: help2man:448 help2man:622 help2man.h2m.PL:140
 msgid "REPORTING BUGS"
-msgstr "СООБЩЕНИЯ ОБ ОШИБКАХ"
+msgstr "Як надіслати звіт про вади"
 
 #: help2man:454 help2man:622 help2man.h2m.PL:139
 msgid "AUTHOR"
@@ -244,7 +245,7 @@ msgstr "АВТОР"
 
 #: help2man:594 help2man:622 help2man.h2m.PL:142
 msgid "SEE ALSO"
-msgstr "СМОТРИТЕ ТАКЖЕ"
+msgstr "ТАКОЖ ПЕРЕГЛЯНЬТЕ"
 
 #: help2man:598
 #, perl-format
@@ -261,44 +262,45 @@ msgid ""
 ".PP\n"
 "should give you access to the complete manual.\n"
 msgstr ""
-"Полная документация на\n"
+"Повноцінну документацію з\n"
 ".B %s\n"
-"ведётся в справочнике Texinfo. Если программы\n"
+"можна знайти у довіднику Texinfo. Якщо у вашій системі встановлено\n"
 ".B info\n"
-"и\n"
+"та\n"
 ".B %s\n"
-"установлены, то по команде\n"
+"за допомогою команди\n"
 ".IP\n"
 ".B info %s\n"
 ".PP\n"
-"можно получить доступ к полному справочнику.\n"
+"ви зможете отримати доступ до повноцінного підручника.\n"
 
 #: help2man:650
 #, perl-format
 msgid "%s: error writing to %s (%s)"
-msgstr "%s: ошибка записи в %s (%s)"
+msgstr "%s: помилка під час спроби запису до %s (%s)"
 
 #: help2man:667
 #, perl-format
 msgid "%s: can't get `%s' info from %s%s"
-msgstr "%s: не удалось получить информацию «%s» из %s%s"
+msgstr "%s: не вдалося отримати дані «%s» з %s%s"
 
 #: help2man:669
 msgid "Try `--no-discard-stderr' if option outputs to stderr"
 msgstr ""
-"Попробуйте --no-discard-stderr, если параметр выводит результат в stderr"
+"Спробуйте додати параметр «--no-discard-stderr», якщо параметри виводить "
+"дані до stderr"
 
 #: help2man.h2m.PL:76
 msgid "Include file for help2man man page"
-msgstr "Включаемый файл в справочную страницу help2man"
+msgstr "Файл-включення сторінки довідника (man) help2man"
 
 #: help2man.h2m.PL:82
 msgid "help2man \\- generate a simple manual page"
-msgstr "help2man \\- генерирует простую справочную страницу"
+msgstr "help2man \\— програма для створення простих сторінок довідника"
 
 #: help2man.h2m.PL:85
 msgid "INCLUDE FILES"
-msgstr "ВКЛЮЧЁННЫЕ ФАЙЛЫ"
+msgstr "ФАЙЛИ-ВКЛЮЧЕННЯ"
 
 #: help2man.h2m.PL:87
 msgid ""
@@ -314,14 +316,14 @@ msgid ""
 "    /pattern/\n"
 "    text\n"
 msgstr ""
-"В генерируемый результат может быть включён дополнительный материал\n"
-"с помощью параметра\n"
+"Включити додаткові матеріали до створеної сторінки можна за допомогою "
+"параметрів\n"
 ".B \\-\\-include\n"
-"и\n"
-".BR \\-\\-opt\\-include .\n"
-"Формат прост:\n"
+"та\n"
+".B \\-\\-opt\\-include\n"
+"Формат включених даних доволі простий:\n"
 "\n"
-"    [раздел]\n"
+"    [розділ]\n"
 "    текст\n"
 "\n"
 "    /шаблон/\n"
@@ -335,11 +337,10 @@ msgid ""
 "(case insensitive), or after a paragraph matching\n"
 ".BI / pattern /\\fR.\n"
 msgstr ""
-"Блоки *roff текста вставляются в результат дословно или в\n"
-"начало заданного\n"
-".BI [ раздела ]\n"
-"(регистр неважен), или после параграфа, подходящего под\n"
-".BI / шаблон /\\fR.\n"
+"Блоки тексту *roff вставляються до виведених даних або на початку вказаного\n"
+".BI [ розділу ]\n"
+"(без врахування регістру), або після абзацу, що відповідає\n"
+".BI / шаблону /\\fR.\n"
 
 #: help2man.h2m.PL:111
 msgid ""
@@ -352,13 +353,13 @@ msgid ""
 "modifiers (see\n"
 ".BR perlre (1)).\n"
 msgstr ""
-"В шаблонах используется синтаксис регулярных выражений Perl, и они могут\n"
-"указываться после модификаторов\n"
+"У шаблонах слід використовувати синтаксис формальних виразів\n"
+"за ними можна вказувати модифікатори\n"
 ".IR i ,\n"
 ".I s\n"
-"или\n"
+"or\n"
 ".I m\n"
-"(см.\n"
+"(див.\n"
 ".BR perlre (1)).\n"
 
 #: help2man.h2m.PL:123
@@ -367,17 +368,18 @@ msgid ""
 "processed as options.  Anything else is silently ignored and may be\n"
 "used for comments, RCS keywords and the like.\n"
 msgstr ""
-"Строки перед первым разделом или шаблоном, который начинается с «\\-»\n"
-"обрабатываются как параметры. Всё остальное просто игнорируется и может\n"
-"быть использованы как комментарии, ключи RCS и т.д.\n"
+"Рядки перед першим розділом або шаблоном, які починаються з набору символів "
+"«\\-»,\n"
+"вважаються визначеннями параметрів. Всі інші такі рядки буде проігноровано,\n"
+"ними можна скористатися для коментування, ключових слів RCS тощо.\n"
 
 #: help2man.h2m.PL:129
 msgid "The section output order (for those included) is:"
-msgstr "Порядок вывода разделов (для включённых):"
+msgstr "Порядок виведення розділів (для включених розділів):"
 
 #: help2man.h2m.PL:138
 msgid "other"
-msgstr "другой"
+msgstr "інше"
 
 #: help2man.h2m.PL:146
 msgid ""
@@ -391,15 +393,15 @@ msgid ""
 ".B --name\n"
 "if required).\n"
 msgstr ""
-"Любые появляющиеся во включаемом файле разделы\n"
-".B [ИМЯ]\n"
-"или\n"
-".B [ОБЗОР]\n"
-"будут заменены на автоматически создаваемые\n"
-"(хотя вы всё равно можете перезаписать первый\n"
-"с помощью параметра\n"
+"Будь-які розділи\n"
+".B [НАЗВА]\n"
+"або\n"
+".B [КОРОТКИЙ ОПИС]\n"
+"вказані у включеному файлі, замінять собою відповідні розділи,\n"
+"створені у автоматичному режимі. Ви можете зберегти перший з цих\n"
+"розділів за допомогою параметра\n"
 ".B --name\n"
-").\n"
+"якщо захочете.\n"
 
 #: help2man.h2m.PL:159
 msgid ""
@@ -408,15 +410,15 @@ msgid ""
 ".I other\n"
 "(above) in the order they were encountered in the include file.\n"
 msgstr ""
-"Другие разделы добавляются к автоматически созданным\n"
-"стандартным разделам, указанным ранее, или включаются на место\n"
-".I другого\n"
-"(выше) в порядке, в котором они расположены во включаемом файле.\n"
+"Інші розділи буде додано перед автоматично створеними даними стандартних\n"
+"розділів, вказаних вище, або буде включено до\n"
+".I іншого\n"
+"(вище) у порядку, у якому їх вказано у файлі-включенні.\n"
 
 #: help2man.h2m.PL:166
 msgid "AVAILABILITY"
-msgstr "ДОСТУПНОСТЬ"
+msgstr "ДОСТУП ДО ПРОГРАМИ"
 
 #: help2man.h2m.PL:167
 msgid "The latest version of this distribution is available on-line from:"
-msgstr "Последняя версия этого дистрибутива доступна под адресу:"
+msgstr "Найсвіжішу версію цього пакунка можна знайти у інтернеті:"

@@ -2,14 +2,14 @@ Source: help2man
 Section: devel
 Priority: optional
 Maintainer: Brendan O'Dea <bod@debian.org>
-Standards-Version: 3.5.1
-Build-Depends: perl (>= 5.8.0-7), debhelper (>= 3.0.5), gettext (>= 0.12.1), liblocale-gettext-perl
-Vcs-Git: git://git.debian.org/users/bod/help2man.git
-Vcs-Browser: http://git.debian.org/?p=users/bod/help2man.git
+Standards-Version: 3.9.2
+Build-Depends: perl (>= 5.8.0-7), debhelper (>= 8), gettext (>= 0.12.1), liblocale-gettext-perl
+Vcs-Git: git://anonscm.debian.org/users/bod/help2man.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=users/bod/help2man.git
 
 Package: help2man
 Architecture: any
-Depends: ${perl:Depends}, ${shlibs:Depends}, liblocale-gettext-perl
+Depends: ${perl:Depends}, ${misc:Depends}, ${shlibs:Depends}, liblocale-gettext-perl, dpkg (>= 1.15.4) | install-info
 Description: Automatic manpage generator
  Program to create simple man pages from the --help and
  --version output of other programs.

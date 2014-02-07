@@ -1,20 +1,19 @@
 \input texinfo @c -*-texinfo-*-
 @setfilename help2man.info
 @settitle @command{help2man} Reference Manual
-@setchapternewpage on
 @finalout
 
-@dircategory GNU programming support
+@dircategory Software development
 @direntry
 * help2man: (help2man).      Automatic manual page generation.
 @end direntry
 
-@ifinfo
+@copying
 This file documents the GNU @command{help2man} command which produces
 simple manual pages from the @samp{--help} and @samp{--version} output
 of other commands.
 
-Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, 2010
+Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, 2010, 2011
 Free Software Foundation, Inc.
 
 Permission is granted to make and distribute verbatim copies of
@@ -37,7 +36,7 @@ Permission is granted to copy and distribute translations of this manual
 into another language, under the above conditions for modified versions,
 except that this permission notice may be stated in a translation approved
 by the Foundation.
-@end ifinfo
+@end copying
 
 @titlepage
 @title help2man
@@ -46,7 +45,7 @@ by the Foundation.
 
 @page
 @vskip 0pt plus 1filll
-Copyright @copyright{} 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009
+Copyright @copyright{} 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, 2010, 2011
 Free Software Foundation, Inc.
 
 Permission is granted to make and distribute verbatim copies of
@@ -64,7 +63,7 @@ except that this permission notice may be stated in a translation approved
 by the Foundation.
 @end titlepage
 
-@ifinfo
+@ifnottex
 @node Top
 @top @command{help2man}
 
@@ -74,14 +73,15 @@ and @samp{--version} output of other commands.
 @menu
 * Overview::                    Overview of @command{help2man}.
 * Invoking help2man::           How to run @command{help2man}.
-* Including text::              Including additional text in the output.
 * --help recommendations::      Recommended formatting for --help output.
+* Including text::              Including additional text in the output.
 * Makefile usage::              Using @command{help2man} with @command{make}.
 * Localised man pages::         Producing native language manual pages.
+* Example::                     Example @command{help2man} output.
 * Reports::                     Reporting bugs or suggestions.
 * Availability::                Obtaining @command{help2man}.
 @end menu
-@end ifinfo
+@end ifnottex
 
 @node Overview
 @chapter Overview of @command{help2man}
@@ -90,7 +90,7 @@ and @samp{--version} output of other commands.
 manual pages from program output.
 
 Although manual pages are optional for GNU programs other projects,
-such as Debian require them (@pxref{Man Pages, , , standards, The GNU
+such as Debian require them (@pxref{Man Pages, , , standards, GNU
 Coding Standards})
 
 This program is intended to provide an easy way for software authors
@@ -170,6 +170,12 @@ Name of Texinfo manual.
 Suppress inclusion of a @samp{SEE ALSO} paragraph directing the reader
 to the Texinfo documentation.
 
+@item -l
+@itemx --libtool
+Drop @file{lt-} prefix from instances of the program name in the
+synopsis (@command{libtool} creates wrapper scripts in the build
+directory which invoke @command{foo} as @command{.libs/lt-foo}).
+
 @item --help
 @itemx --version
 Show help or version information.
@@ -203,9 +209,9 @@ Here are some recommendations for what to include in your
 best chance at generating a respectable man page, as well as
 benefitting users directly.
 
-@xref{Command-Line Interfaces,,,GNU Coding Standards,standards}, and
-@ref{Man Pages,,,GNU Coding Standards,standards}, for the official GNU
-standards relating to @option{--help} and man pages.
+@xref{Command-Line Interfaces, , , standards, GNU Coding Standards},
+and @ref{Man Pages, , , standards, GNU Coding Standards}, for the
+official GNU standards relating to @option{--help} and man pages.
 
 @itemize @bullet
 @item
@@ -367,7 +373,7 @@ either of:
 AM_MISSING_PROG(HELP2MAN, help2man, $missing_dir)
 @end example
 
-for @code{automake}, or something like:
+for @command{automake}, or something like:
 
 @example
 AC_PATH_PROG(HELP2MAN, help2man, false // No help2man //)
@@ -376,17 +382,19 @@ AC_PATH_PROG(HELP2MAN, help2man, false // No help2man //)
 for @command{autoconf} alone.
 
 @node Localised man pages
-@chapter Producing Native Language Manual Pages.
+@chapter Producing Native Language Manual Pages
 
 Manual pages may be produced for any locale supported by both the
-program and @command{help2man}@footnote{@command{help2man} currently
-supports @samp{de_DE}, @samp{fi_FI}, @samp{fr_FR}, @samp{pl_PL},
-@samp{pt_BR} and @samp{sv_SE} (@pxref{Reports} for how to submit other
-translations).} with the @samp{--locale} (@samp{-L}) option.
+program and @command{help2man} with the @samp{--locale} (@samp{-L})
+option.
 
 @example
 help2man -L fr_FR@@euro -o cp.fr.1 cp
 @end example
+
+See @url{http://translationproject.org/domain/help2man.html} for the
+languages currently supported by @command{help2man}, and
+@pxref{Reports} for how to submit other translations.
 
 @section Changing the Location of Message Catalogs
 
@@ -396,7 +404,7 @@ will not be (if installed at all) correct for the version of the
 program being built.
 
 A preloadable library is provided with @command{help2man} which will
-intercept @code{gettext} calls configuring the location of message
+intercept @code{bindtextdomain} calls configuring the location of message
 catalogs for the domain given by @env{$TEXTDOMAIN} and override the
 location to the path given by @env{$LOCALEDIR}.
 
@@ -423,16 +431,126 @@ above is done by @code{gettext}, if a more specific match were available
 it would also have been re-mapped.
 
 @item
-The inclusion of @code{preloadable_libintl.so} in @env{$LD_PRELOAD} is
-required only for cases (such as @code{glibc}) where @code{gettext} is
-built into libc (where @code{__open} would otherwise be satisfied
-internally).
-
-@item
-This preload hack has only been tested against @command{glibc} 2.3.1
-and @command{gettext} 2.3.1 on a GNU/Linux system; let me know if it
+This preload has only been tested against @command{eglibc} 2.11.2 and
+@command{gettext} 0.18.1.1 on a GNU/Linux system; let me know if it
 does (or doesn't) work for you (@pxref{Reports}).
 @end itemize
+
+@node Example
+@chapter Example @command{help2man} Output
+
+Given a hypothetical program @command{foo} which produces the following output:
+
+@c Default values strong/em to be used in Examples, these are
+@c overridden for info, which doesn't have real bold/italic.
+@macro exstrong{text}
+@strong{\text\}
+@end macro
+@macro exemph{text}
+@emph{\text\}
+@end macro
+
+@c No-op version for info:
+@ifinfo
+@unmacro exstrong
+@macro exstrong{text}
+\text\
+@end macro
+@unmacro exemph
+@macro exemph{text}
+\text\
+@end macro
+@end ifinfo
+
+@example
+@exstrong{$ foo --version}
+GNU foo 1.1
+
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Written by A. Programmer.
+@exstrong{$ foo --help}
+GNU `foo' does nothing interesting except serve as an example for
+`help2man'.
+
+Usage: foo [OPTION]...
+
+Options:
+  -a, --option      an option
+  -b, --another-option[=VALUE]
+                    another option
+
+      --help        display this help and exit
+      --version     output version information and exit
+
+Examples:
+  foo               do nothing
+  foo --option      the same thing, giving `--option'
+
+Report bugs to <bug-gnu-utils@@gnu.org>.
+@end example
+
+@command{help2man} will produce @command{nroff} input for a manual
+page which will be formatted something like this:
+
+@example
+FOO(1)                         User Commands                        FOO(1)
+
+
+@exstrong{NAME}
+       foo - manual page for foo 1.1
+
+@exstrong{SYNOPSIS}
+       foo [OPTION]...
+
+@exstrong{DESCRIPTION}
+       GNU  `foo'  does nothing interesting except serve as an example for
+       `help2man'.
+
+@exstrong{OPTIONS}
+       @exstrong{-a}, @exstrong{--option}
+              an option
+
+       @exstrong{-b}, @exstrong{--another-option}[=@exemph{VALUE}]
+              another option
+
+       @exstrong{--help} display this help and exit
+
+       @exstrong{--version}
+              output version information and exit
+
+@exstrong{EXAMPLES}
+       foo    do nothing
+
+       foo @exstrong{--option}
+              the same thing, giving `--option'
+
+@exstrong{AUTHOR}
+       Written by A. Programmer.
+
+@exstrong{REPORTING BUGS}
+       Report bugs to <bug-gnu-utils@@gnu.org>.
+
+@exstrong{COPYRIGHT}
+       Copyright @copyright{} 2011 Free Software Foundation, Inc.
+       This is free software;  see  the  source  for  copying  conditions.
+       There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+       PARTICULAR PURPOSE.
+
+@exstrong{SEE ALSO}
+       The full documentation for @exstrong{foo} is maintained as a  Texinfo  manual.
+       If  the  @exstrong{info} and @exstrong{foo} programs are properly installed at your site,
+       the command
+
+              @exstrong{info foo}
+
+       should give you access to the complete manual.
+
+
+foo 1.1                          May 2011                           FOO(1)
+@end example
 
 @node Reports
 @chapter Reporting Bugs or Suggestions
@@ -440,18 +558,29 @@ does (or doesn't) work for you (@pxref{Reports}).
 If you find problems or have suggestions about this program or
 manual, please report them to @email{bug-help2man@@gnu.org}.
 
-Note to translators:  when submitting new translations for
-@code{po/help2man.pot} please additionally translate
-@code{help2man.h2m} (used to augment the manual pages for
-@code{help2man}).
+Note to translators: Translations are handled though the
+@uref{http://translationproject.org/, Translation Project} see
+@url{http://translationproject.org/html/translators.html} for details.
 
 @node Availability
 @chapter Obtaining @command{help2man}
 
-The latest version of this distribution is available on-line from:
+The latest version of this distribution is available online from GNU
+mirrors:
 
 @example
-@url{ftp://ftp.gnu.org/gnu/help2man/}
+@url{http://ftpmirror.gnu.org/help2man/}
+@end example
+
+If automatic redirection fails, the list of mirrors is at:
+
+@example
+@url{http://www.gnu.org/order/ftp.html}
+@end example
+
+Or if need be you can use the main GNU ftp server:
+@example
+@url{http://ftp.gnu.org/gnu/help2man/}
 @end example
 
 @contents

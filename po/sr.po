@@ -1,26 +1,21 @@
-# Vietnamese translation for Help2Man.
-# Copyright © 2012 Free Software Foundation, Inc.
+# Serbian translation of help2man.
+# Copyright (C) 2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the help2man package.
-# Clytie Siddall <clytie@riverland.net.au>, 2010.
-# Trần Ngọc Quân <vnwildman@gmail.com>, 2012.
-#
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: help2man-1.40.7\n"
 "Report-Msgid-Bugs-To: Brendan O'Dea <bug-help2man@gnu.org>\n"
-"POT-Creation-Date: 2012-04-20 22:35+1000\n"
-"PO-Revision-Date: 2012-04-16 07:31+0700\n"
-"Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
-"Language-Team: Vietnamese <translation-team-vi@lists.sourceforge.net>\n"
-"Language: vi\n"
+"POT-Creation-Date: 2012-06-03 10:13+1000\n"
+"PO-Revision-Date: 2012-05-02 10:03+0200\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Serbian <gnu@prevod.org>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: LocFactoryEditor 1.8\n"
-"X-Poedit-Language: Vietnamese\n"
-"X-Poedit-Country: VIET NAM\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: help2man:68
 #, perl-format
@@ -35,16 +30,16 @@ msgid ""
 "\n"
 "Written by Brendan O'Dea <bod@debian.org>\n"
 msgstr ""
-"GNU %s %s\n"
+"ГНУ %s %s\n"
 "\n"
-"Tác quyền (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, "
-"2010,\n"
-"2011, 2012 Tổ chức Phần mềm Tự do.\n"
-"Đây là phần mềm miễn phí; xem trong mã nguồn để biết các điều khoản về sao "
-"chép.  Đây KHÔNG\n"
-"bảo hành; thậm chí còn có thể BÁN ĐƯỢC hay PHÙ HỢP VỚI MỤC ĐÍCH ĐẶC THÙ.\n"
+"Ауторска права (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, "
+"2009, 2010,\n"
+"2011, 2012 Задужбина слободног софтвера, Инц.\n"
+"Ово је слободан софтвер; погледајте извор за услове умножавања.  Нема "
+"НИКАКВЕ\n"
+"гаранције; чак ни за ТРЖИШНУ ВРЕДНОСТ или ПРИЛАГОЂЕНОСТИ ПОСЕБНОЈ НАМЕНИ.\n"
 "\n"
-"Viết bởi Brendan O'Dea <bod@debian.org>\n"
+"Написао је Брендан О'Деа <bod@debian.org>\n"
 
 #: help2man:79
 #, perl-format
@@ -78,48 +73,45 @@ msgid ""
 "\n"
 "Report bugs to <bug-help2man@gnu.org>.\n"
 msgstr ""
-"« %s » tạo một trang hướng dẫn dựa vào kết xuất của tuỳ chọn\n"
-"`--help' (trợ giúp) và `--version' (phiên bản).\n"
+"„%s“ ствара странице упутства из „--help“ и „--version“ излаза.\n"
 "\n"
-"Sử dụng: %s [TÙY_CHỌN]... TÊN-LỆNH\n"
+"Употреба: %s [ОПЦИЈА]... ИЗВРШНИ\n"
 "\n"
-" -n, --name=CHUỖI       mô tả cho đoạn văn TÊN (NAME)\n"
-" -s, --section=PHẦN   số thứ tự phần cho trang hướng dẫn (1, 6, 8)\n"
-" -m, --manual=TÊN       tên của trang hướng dẫn (User Commands, ...)\n"
-" -S, --source=TEXT       nguồn của chương trình (FSF, Debian, ...)\n"
-" -L, --locale=CHUỖI     chọn miền địa phương (mặc định \"C\";\n"
-"\t\tđối với tiếng Việt thì là « vi_VN.UTF-8 »)\n"
-" -i, --include=TỆP      bao gồm dữ liệu từ tập tin này\n"
-" -I, --opt-include=TỆP  bao gồm dữ liệu từ tập tin này nếu có\n"
-" -o, --output=TỆP       gửi kết xuất cho tập tin này\n"
-" -p, --info-page=TÊN    tên của trang hướng dẫn loại Texinfo\n"
-" -N, --no-info           thu hồi cái chỉ tới trang hướng dẫn Texinfo\n"
-" -l, --libtool           loại trừ `lt-' từ tên của chương trình\n"
-"     --help              hiển thị trợ giúp này, sau đó thoát\n"
-"     --version           hiển thị số thứ tự phiên bản, sau đó thoát\n"
+" -n, --name=НИСКА            опис пасуса НАЗИВ\n"
+" -s, --section=ОДЕЉАК        број одељка за страницу упутства (1, 6, 8)\n"
+" -m, --manual=ТЕКСТ          назив упутства (Корисничке наредбе, ...)\n"
+" -S, --source=ТЕКСТ          извор програма (3ЦЦ, Дебијан, ...)\n"
+" -L, --locale=НИСКА          бира локалитет (основно је \"C\")\n"
+" -i, --include=ДАТОТЕКА      укључује материјал из „ДАТОТЕКЕ“\n"
+" -I, --opt-include=ДАТОТЕКА  укључује материјал из ДАТОТЕКЕ ако постоји\n"
+" -o, --output=ДАТОТЕКА       шаље излаз у ДАТОТЕКУ\n"
+" -p, --info-page=ТЕКСТ       назив Тексинфо упутства\n"
+" -N, --no-info               потискује указивач на Тексинфо упутства\n"
+" -l, --libtool               искључује „lt-“ из назива програма\n"
+"     --help                  исписује ову помоћ, затим излази\n"
+"     --version               исписује број издања, затим излази\n"
 "\n"
-"TÊN-LỆNH có thể chấp nhận hai tuỳ chọn `--help' và `--version' và sản sinh "
-"kết xuất\n"
-"qua đầu ra tiêu chuẩn (stdout) mặc dù cũng có thể ghi rõ thêm tuỳ chọn:\n"
+"ИЗВРШНИ треба да прихвати „--help“ и „--version“ опције и да произведе "
+"излаз\n"
+"на стандардном излазу иако алтернативе могу бити наведене користећи:\n"
 "\n"
-" -h, --help-option=CHUỖI     \tchuỗi là tuỳ chọn trợ giúp\n"
-" -v, --version-option=CHUỖI  \tchuỗi là tuỳ chọn phiên bản\n"
-" --version-string=CHUỖI      \tchuỗi phiên bản\n"
-" --no-discard-stderr          \t\tbao gồm cả kết xuất từ đầu ra lỗi tiêu "
-"chuẩn\n"
-"\t\t\tkhi phân tích cú pháp của kết xuất tuỳ chọn\n"
+" -h, --help-option=НИСКА     ниска опције помоћи\n"
+" -v, --version-option=НИСКА  ниска опције издања\n"
+" --version-string=НИСКА      ниска издања\n"
+" --no-discard-stderr         укључује стандардну грешку при обради излаза "
+"опције\n"
 "\n"
-"Thông báo lỗi nào cho <bug-help2man@gnu.org>.\n"
+"Грешке пријавите на <bug-help2man@gnu.org>.\n"
 
 #: help2man:163
 #, perl-format
 msgid "%s: can't open `%s' (%s)"
-msgstr "%s: không thể mở « %s » (%s)"
+msgstr "%s: не могу да отворим „%s“ (%s)"
 
 #: help2man:224
 #, perl-format
 msgid "%s: no valid information found in `%s'"
-msgstr "%s: không tìm thấy thông tin hợp lệ trong « %s »"
+msgstr "%s: нисам пронашао исправне информације у „%s“"
 
 #. Translators: the following message is a strftime(3) format string, which in
 #. the English version expands to the month as a word and the full year.  It
@@ -127,41 +119,41 @@ msgstr "%s: không tìm thấy thông tin hợp lệ trong « %s »"
 #. just use %x as the value (which should be the full locale-specific date).
 #: help2man:244
 msgid "%B %Y"
-msgstr "%B %Y"
+msgstr "%B %Y."
 
 #: help2man:251
 #, perl-format
 msgid "%s: can't unlink %s (%s)"
-msgstr "%s: không thể bỏ liên kết %s (%s)"
+msgstr "%s: не могу да поништим везу „%s“ (%s)"
 
 #: help2man:255
 #, perl-format
 msgid "%s: can't create %s (%s)"
-msgstr "%s: không thể tạo %s (%s)"
+msgstr "%s: не могу да направим „%s“ (%s)"
 
 #. Translators: "NAME", "SYNOPSIS" and other one or two word strings in all
 #. upper case are manual page section headings.  The man(1) manual page in your
 #. language, if available should provide the conventional translations.
 #: help2man:297 help2man:619 help2man.h2m.PL:81 help2man.h2m.PL:131
 msgid "NAME"
-msgstr "TÊN"
+msgstr "НАЗИВ"
 
 #: help2man:309
 #, perl-format
 msgid "%s \\- manual page for %s %s"
-msgstr "%s \\- trang hướng dẫn cho %s %s"
+msgstr "%s \\— страница упутства за %s %s"
 
 #: help2man:323
 msgid "System Administration Utilities"
-msgstr "Tiện ích quản lý hệ thống"
+msgstr "Помагала за администрацију система"
 
 #: help2man:324
 msgid "Games"
-msgstr "Trò chơi"
+msgstr "Игре"
 
 #: help2man:325
 msgid "User Commands"
-msgstr "Lệnh người dùng"
+msgstr "Корисничке наредбе"
 
 #. Translators: "Usage" and "or" here are patterns (regular expressions) which
 #. are used to match the usage synopsis in program output.  An example from cp
@@ -171,19 +163,19 @@ msgstr "Lệnh người dùng"
 #. or:  cp [OPTION]... -t DIRECTORY SOURCE...
 #: help2man:336
 msgid "Usage"
-msgstr "Sử dụng"
+msgstr "Употреба"
 
 #: help2man:337
 msgid "or"
-msgstr "hoặc"
+msgstr "или"
 
 #: help2man:369 help2man:619 help2man.h2m.PL:132
 msgid "SYNOPSIS"
-msgstr "TÓM TẮT"
+msgstr "УВОД"
 
 #: help2man:373 help2man:619 help2man.h2m.PL:133
 msgid "DESCRIPTION"
-msgstr "MÔ TẢ"
+msgstr "ОПИС"
 
 #. Translators: patterns are used to match common program output. In the source
 #. these strings are all of the form of "my $PAT_something = _('...');" and are
@@ -195,64 +187,63 @@ msgstr "MÔ TẢ"
 #. be matched.
 #: help2man:398
 msgid "Report +(?:[\\w-]+ +)?bugs|Email +bug +reports +to"
-msgstr "Thông báo lỗi +(?:[\\w-]* +)?|Gửi thư +thông +báo +lỗi +cho"
+msgstr "Пријавите +(?:[\\w-]+ +)?грешке|Пошаљите +извештаје +о +грешкама +на"
 
 #: help2man:399
 msgid "Written +by"
-msgstr "Viết +bởi"
+msgstr "Написали +су"
 
 #: help2man:400
 msgid "Options"
-msgstr "Tuỳ chọn"
+msgstr "Опције"
 
 #: help2man:401
 msgid "Environment"
-msgstr "Môi trường"
+msgstr "Окружење"
 
 #: help2man:402
 msgid "Files"
-msgstr "Tập tin"
+msgstr "Датотеке"
 
 #: help2man:403
 msgid "Examples"
-msgstr "Ví dụ"
+msgstr "Примери"
 
 #: help2man:404
 msgid "This +is +free +software"
-msgstr "Đây +là +phần +mềm +tự +do"
+msgstr "Ово +је +слободан +софтвер"
 
 #: help2man:420 help2man:619 help2man.h2m.PL:134
 msgid "OPTIONS"
-msgstr "TÙY CHỌN"
+msgstr "ОПЦИЈЕ"
 
 #: help2man:425 help2man:620 help2man.h2m.PL:135
 msgid "ENVIRONMENT"
-msgstr "MÔI TRƯỜNG"
+msgstr "ОКРУЖЕЊЕ"
 
 #: help2man:430 help2man:620 help2man.h2m.PL:136
 msgid "FILES"
-msgstr "TỆP"
+msgstr "ДАТОТЕКЕ"
 
-# type: =head1
 #: help2man:435 help2man:620 help2man.h2m.PL:137
 msgid "EXAMPLES"
-msgstr "VÍ DỤ"
+msgstr "ПРИМЕРИ"
 
 #: help2man:442 help2man:622 help2man.h2m.PL:141
 msgid "COPYRIGHT"
-msgstr "BẢN QUYỀN"
+msgstr "АУТОРСКА ПРАВА"
 
 #: help2man:448 help2man:622 help2man.h2m.PL:140
 msgid "REPORTING BUGS"
-msgstr "THÔNG BÁO LỖI"
+msgstr "ПРИЈАВЉИВАЊЕ ГРЕШАКА"
 
 #: help2man:454 help2man:622 help2man.h2m.PL:139
 msgid "AUTHOR"
-msgstr "TÁC GIẢ"
+msgstr "АУТОР"
 
 #: help2man:594 help2man:622 help2man.h2m.PL:142
 msgid "SEE ALSO"
-msgstr "XEM THÊM"
+msgstr "ПОГЛЕДАЈТЕ ТАКОЂЕ"
 
 #: help2man:598
 #, perl-format
@@ -269,46 +260,44 @@ msgid ""
 ".PP\n"
 "should give you access to the complete manual.\n"
 msgstr ""
-"Tài liệu hướng dẫn đầy đủ về\n"
+"Потпуна документација за\n"
 ".B %s\n"
-"được bảo tồn dưới dạng một sổ tay Texinfo.\n"
-"Nếu chương trình\n"
-".B info\n"
-"và\n"
+"је одржавана као Тексинфо упутство.  Ако су\n"
+".B инфо\n"
+"и\n"
 ".B %s\n"
-"được cài đặt đúng ở địa chỉ của bạn thì câu lệnh\n"
+"исправно инсталирани на вашем сајту, наредба\n"
 ".IP\n"
-".B info %s\n"
+".B инфо %s\n"
 ".PP\n"
-"nên cho phép bạn truy cập đến sổ tay hoàn toàn.\n"
+"треба да вам да приступ потпуном упутству.\n"
 
 #: help2man:650
 #, perl-format
 msgid "%s: error writing to %s (%s)"
-msgstr "%s:  lỗi ghi vào %s (%s)"
+msgstr "%s: грешка приликом писања у %s (%s)"
 
 #: help2man:667
 #, perl-format
 msgid "%s: can't get `%s' info from %s%s"
-msgstr "%s: không thể lấy thông tin « %s » từ %s%s"
+msgstr "%s: не могу да добавим „%s“ инфо са %s%s"
 
 #: help2man:669
 msgid "Try `--no-discard-stderr' if option outputs to stderr"
 msgstr ""
-"Nếu tuỳ chọn xuất qua đầu lỗi tiêu chuẩn thì thử lập cờ « --no-discard-"
-"stderr »"
+"Покушајте „--no-discard-stderr“ ако опција шаље резултат у стандардну грешку"
 
 #: help2man.h2m.PL:76
 msgid "Include file for help2man man page"
-msgstr "Bao gồm tập tin cho trang hướng dẫn về help2man"
+msgstr "Укључи датотеку за страницу упутства хелп2мана"
 
 #: help2man.h2m.PL:82
 msgid "help2man \\- generate a simple manual page"
-msgstr "help2man \\- tạo một trang hướng dẫn đơn giản"
+msgstr "help2man \\— ствара страницу упутства"
 
 #: help2man.h2m.PL:85
 msgid "INCLUDE FILES"
-msgstr "TỆP BAO GỒM"
+msgstr "УКЉУЧИ ДАТОТЕКЕ"
 
 #: help2man.h2m.PL:87
 msgid ""
@@ -324,17 +313,17 @@ msgid ""
 "    /pattern/\n"
 "    text\n"
 msgstr ""
-"Cũng có thể bao gồm dữ liệu bổ sung trong kết xuất, dùng tuỳ chọn\n"
+"Додатни материјал може бити укључен у створени резултат употребом\n"
 ".B \\-\\-include\n"
-"và\n"
+"и\n"
 ".B \\-\\-opt\\-include\n"
-"Có một định dạng đơn giản:\n"
+"опцијом.  Облик је једноставан:\n"
 "\n"
-"    [phần]\n"
-"    chuỗi\n"
+"    [одељак]\n"
+"    текст\n"
 "\n"
-"    /mẫu/\n"
-"    chuỗi\n"
+"    /шаблон/\n"
+"    текст\n"
 
 #: help2man.h2m.PL:102
 msgid ""
@@ -344,12 +333,11 @@ msgid ""
 "(case insensitive), or after a paragraph matching\n"
 ".BI / pattern /\\fR.\n"
 msgstr ""
-"Khối văn bản định dạng *roff đúng nguyên văn được chèn vào kết xuất\n"
-"hoặc ở đầu của phần\n"
-".BI [ phần ]\n"
-"(không phân biệt chữ hoa/thường),\n"
-"hoặc đẳng sau một đoạn văn tương ứng với mẫu\n"
-".BI / mẫu /\\fR.\n"
+"Блокови дословног *рофф текста су уметнути у резултату било на\n"
+"почетку датог\n"
+".BI [ одељка ]\n"
+"(неосетљив на величину слова), или након поклапања пасуса са\n"
+".BI / шаблоном /\\fR.\n"
 
 #: help2man.h2m.PL:111
 msgid ""
@@ -362,13 +350,13 @@ msgid ""
 "modifiers (see\n"
 ".BR perlre (1)).\n"
 msgstr ""
-"Mẫu chấp nhận cú pháp của biểu thức chính quy Perl,\n"
-"và cũng cho phép dấu sửa đổi\n"
+"Шаблони користе синтаксу регуларног израза Перла и за њима могу да\n"
+"стоје\n"
 ".IR i ,\n"
 ".I s\n"
-"hay\n"
+"или\n"
 ".I m\n"
-"(xem\n"
+"измењивачи (погледајте\n"
 ".BR perlre (1)).\n"
 
 #: help2man.h2m.PL:123
@@ -377,17 +365,17 @@ msgid ""
 "processed as options.  Anything else is silently ignored and may be\n"
 "used for comments, RCS keywords and the like.\n"
 msgstr ""
-"Dòng nào đẳng trước phần đầu tiên hoặc mẫu bắt đầu với « \\- » thì được xử "
-"lý dưới dạng tuỳ chọn. Dữ liệu khác (nếu có) bị bỏ qua mà không xuất chi "
-"tiết, và có thể được sử dụng làm ghi chú, từ khoá RCS v.v.\n"
+"Редови пре првог одељка или шаблона који почињу са „\\-“ се\n"
+"обрађују као опције.  Све остало се немо занемарује и може бити\n"
+"коришћено за напомене, РЦС кључне речи и слично.\n"
 
 #: help2man.h2m.PL:129
 msgid "The section output order (for those included) is:"
-msgstr "Thứ tự xuất phần (đã bao gồm):"
+msgstr "Поредак резултата одељка (за оне укључене) је:"
 
 #: help2man.h2m.PL:138
 msgid "other"
-msgstr "khác"
+msgstr "остало"
 
 #: help2man.h2m.PL:146
 msgid ""
@@ -401,17 +389,15 @@ msgid ""
 ".B --name\n"
 "if required).\n"
 msgstr ""
-"Bắt cứ phần\n"
-".B [NAME]\n"
-"hoặc\n"
-".B [SYNOPSIS]\n"
-"nào xuất hiện trong tập tin bao gồm thì thay thế kết xuất tự động tạo\n"
-"(dù bạn vẫn còn có dịp ghi đè lên phần [NAME] bằng:\n"
+"Сваки\n"
+".B [НАЗИВ]\n"
+"или\n"
+".B [УВОД]\n"
+"одељак који се појави у датотеци укључивања ће заменити оно што је\n"
+"самостално произведено (ипак можете још увек да прескочите\n"
+"модел са\n"
 ".B --name\n"
-"nếu cần).\n"
-"\n"
-"NAME: TÊN\n"
-"SYNOPSIS: TÓM TẮT\n"
+"ако је затражено).\n"
 
 #: help2man.h2m.PL:159
 msgid ""
@@ -420,15 +406,15 @@ msgid ""
 ".I other\n"
 "(above) in the order they were encountered in the include file.\n"
 msgstr ""
-"Các phần khác được thêm vào đầu của kết xuất tự động tạo\n"
-"cho những phần tiêu chuẩn đưa ra trên, hoặc được bao gồm tại\n"
-".I other\n"
-"(bên trên) theo thứ tự gặp trong tập tin bao gồm.\n"
+"Остали одељци су прикачени самостално произведеном резултату за\n"
+"стандардне одељке дате изнад, или укључени у\n"
+".I осталим\n"
+"(изнад) по редоследу како су проналажени у датотеци укључивања.\n"
 
 #: help2man.h2m.PL:166
 msgid "AVAILABILITY"
-msgstr "TÍNH SẴN SÀNG"
+msgstr "ДОСТУПНОСТ"
 
 #: help2man.h2m.PL:167
 msgid "The latest version of this distribution is available on-line from:"
-msgstr "Phiên bản mới nhất của bản phân phối này có sẵn sàng trực tuyến từ :"
+msgstr "Најновије издање ове расподеле је доступно на мрежи са:"

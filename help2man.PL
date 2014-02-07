@@ -16,17 +16,19 @@ use 5.008;
 use Config;
 use Getopt::Long;
 
-my ($program, $version) = ('help2man', '1.38.2');
+my ($program, $version) = ('help2man', '1.40.10');
 
 my %opts;
 die "Usage: $0 [--quiet] [--stdout] [--with-gettext] [--name] [--version]\n"
-    unless GetOptions \%opts, qw(quiet stdout with-gettext name version) and !@ARGV;
+    unless GetOptions \%opts, qw(quiet stdout with-gettext name version)
+      and !@ARGV;
 
 print "$program\n" if $opts{name};
 print "$version\n" if $opts{version};
 exit		   if $opts{name} or $opts{version};
 
 my $target = $0;
+my $tmp;
 if ($opts{stdout})
 {
     *OUT = *STDOUT;
@@ -36,8 +38,9 @@ else
 {
     $target =~ s!.*/!!;
     $target =~ s/\.PL$// or die "$0: can't determine target name\n";
-    unlink $target       or die "$0: can't unlink $target ($!)\n" if -e $target;
-    open OUT, ">$target" or die "$0: can't create $target ($!)\n";
+    $tmp = "$target.tmp$$";
+    unlink $tmp          or die "$0: can't unlink $tmp ($!)\n" if -e $tmp;
+    open OUT, ">$tmp"    or die "$0: can't create $tmp ($!)\n";
 }
 
 print "Extracting $target (with variable substitutions)\n"
@@ -58,8 +61,8 @@ eval 'exec $Config{perlpath} -wS \$0 \${1+"\$@"}'
 print OUT <<'!NO!SUBS!';
 
 # Generate a short man page from --help and --version output.
-# Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, 2010
-# Free Software Foundation, Inc.
+# Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009,
+# 2010, 2011, 2012 Free Software Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -72,8 +75,7 @@ print OUT <<'!NO!SUBS!';
 # GNU General Public License for more details.
 
 # You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software Foundation,
-# Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 # Written by Brendan O'Dea <bod@debian.org>
 # Available from ftp://ftp.gnu.org/gnu/help2man/
@@ -154,8 +156,8 @@ sub N_ { $_[0] }
 my $version_info = enc_user sprintf _(<<'EOT'), $this_program, $this_version;
 GNU %s %s
 
-Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, 2010
-Free Software Foundation, Inc.
+Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, 2010,
+2011, 2012 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
@@ -177,6 +179,7 @@ Usage: %s [OPTION]... EXECUTABLE
  -o, --output=FILE       send output to `FILE'
  -p, --info-page=TEXT    name of Texinfo manual
  -N, --no-info           suppress pointer to Texinfo manual
+ -l, --libtool           exclude the `lt-' from the program name
      --help              print this help, then exit
      --version           print version number, then exit
 
@@ -197,7 +200,8 @@ my $source = '';
 my $help_option = '--help';
 my $version_option = '--version';
 my $discard_stderr = 1;
-my ($opt_name, @opt_include, $opt_output, $opt_info, $opt_no_info, $version_text);
+my ($opt_name, @opt_include, $opt_output, $opt_info, $opt_no_info, $opt_libtool,
+    $version_text);
 
 my %opt_def = (
     'n|name=s'		 => \$opt_name,
@@ -210,6 +214,7 @@ my %opt_def = (
     'o|output=s'	 => \$opt_output,
     'p|info-page=s'	 => \$opt_info,
     'N|no-info'		 => \$opt_no_info,
+    'l|libtool'		 => \$opt_libtool,
     'help'		 => sub { print $help_info; exit },
     'version'		 => sub { print $version_info; exit },
     'h|help-option=s'	 => \$help_option,
@@ -328,7 +333,11 @@ sub get_option_value;
 my $help_text   = get_option_value $ARGV[0], $help_option;
 $version_text ||= get_option_value $ARGV[0], $version_option;
 
-my $date = strftime "%B %Y", localtime;
+# Translators: the following message is a strftime(3) format string, which in
+# the English version expands to the month as a word and the full year.  It
+# is used on the footer of the generated manual pages.  If in doubt, you may
+# just use %x as the value (which should be the full locale-specific date).
+my $date = enc strftime _("%B %Y"), localtime;
 (my $program = $ARGV[0]) =~ s!.*/!!;
 my $package = $program;
 my $version;
@@ -407,9 +416,9 @@ unless ($manual)
 {
     for ($section)
     {
-	if (/^(1[Mm]|8)/) { $manual = _('System Administration Utilities') }
-	elsif (/^6/)	  { $manual = _('Games') }
-	else		  { $manual = _('User Commands') }
+	if (/^(1[Mm]|8)/) { $manual = enc _('System Administration Utilities') }
+	elsif (/^6/)	  { $manual = enc _('Games') }
+	else		  { $manual = enc _('User Commands') }
     }
 }
 
@@ -437,6 +446,7 @@ if ($help_text =~ s/^($PAT_USAGE):( +(\S+))(.*)((?:\n(?: {6}\1| *($PAT_USAGE_CON
     {
 	$synopsis .= ".br\n" if $synopsis;
 	s!^\S*/!!;
+	s/^lt-// if $opt_libtool;
 	s/^(\S+) *//;
 	$synopsis .= ".B $1\n";
 	s/\s+$//;
@@ -696,7 +706,7 @@ EOT
 }
 
 # Output header.
-print enc <<EOT;
+print <<EOT;
 .\\" DO NOT MODIFY THIS FILE!  It was generated by $this_program $this_version.
 .TH $PROGRAM "$section" "$date" "$source" "$manual"
 EOT
@@ -779,16 +789,12 @@ sub convert_option
 }
 !NO!SUBS!
 
-# Fix permissions and set timestamps to match the source
+# Rename output and fix permissions
 unless ($opts{stdout})
 {
     close OUT;
-    chmod 0555, $target or warn "$0: can't change mode of $target ($!)\n";
-    utime +(stat DATA)[8,9], $target
-    	or warn "$0: can't set time of $target ($!)\n";
+    rename $tmp, $target or die "$0: can't rename $tmp to $target ($!)\n";
+    chmod 0555, $target  or warn "$0: can't change mode of $target ($!)\n";
 }
 
 exit 0;
-
-# DATA handle used for mtime
-__END__

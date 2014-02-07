@@ -1,8 +1,157 @@
-help2man (1.38.2-skerlet1) unstable; urgency=low
+help2man (1.40.10) unstable; urgency=low
 
-  * Disable sanity check for build
+  * Update Greek translation (thanks to Savvas Radevic).
+  * Update Serbian translation (thanks to Мирослав Николић).
+  * Update German translation (thanks to Arun Persaud).
 
- -- Skerlet Development Team <skerlet@swc.toshiba.co,jp>  Fri, 12 Oct 2012 17:57:51 +0900
+ -- Brendan O'Dea <bod@debian.org>  Sat, 12 May 2012 13:54:58 +1000
+
+help2man (1.40.9) unstable; urgency=low
+
+  * Update Japanese translation (thanks to Yasumichi Akahoshi).
+  * Update Esperanto translation (thanks to Felipe Castro).
+  * Update Vietnamese translation (thanks to Trần Ngọc Quân).
+  * Update German translation (thanks to Chris Leick, closes: #669564).
+
+ -- Brendan O'Dea <bod@debian.org>  Fri, 20 Apr 2012 21:35:43 +1000
+
+help2man (1.40.8) unstable; urgency=low
+
+  * Update French translation (thanks to David Prévot).
+  * Update Italian translation (thanks to Sergio Zanchetta).
+  * Update Polish translation (thanks to Jakub Bogusz).
+  * Update Russian translation (thanks to Yuri Kozlov).
+  * Update Ukranian translation (thanks to Yuri Chornoivan).
+  * Modify self-extracting scripts to output to a temporary file.
+  * Ensure that help2man exists before building manual pages (as reported
+    by Richard Maw).
+
+ -- Brendan O'Dea <bod@debian.org>  Sun, 08 Apr 2012 23:10:20 +1000
+
+help2man (1.40.7) unstable; urgency=low
+
+  * Update Greek translation (thanks to Savvas Radevic).
+
+ -- Brendan O'Dea <bod@debian.org>  Mon, 19 Mar 2012 21:28:41 +1100
+
+help2man (1.40.6) unstable; urgency=low
+
+  * Update years in debian/copyright.
+  * Fix FSF address in comments (thanks to Paul Eggert).
+
+ -- Brendan O'Dea <bod@debian.org>  Sun, 12 Feb 2012 22:39:25 +1100
+
+help2man (1.40.5) unstable; urgency=low
+
+  * Clean up some lintian warnings: build-targets, source format and
+    standards version.
+  * Add Serbian translation (thanks to Miroslav Nikolic).
+  * Fix trivial translation changes due to additional copyright year.
+  * Minor fix to Italian translation.
+
+ -- Brendan O'Dea <bod@debian.org>  Mon, 02 Jan 2012 20:50:50 +1100
+
+help2man (1.40.4) unstable; urgency=low
+
+  * Update Brazilian Portuguese translation (thanks to Rodolfo Ribeiro
+    Gomes).
+
+ -- Brendan O'Dea <bod@debian.org>  Mon, 20 Jun 2011 11:29:04 +1000
+
+help2man (1.40.3) unstable; urgency=low
+
+  * Update Esperanto translation (thanks to Felipe Castro).
+  * Update links to git repository.
+
+ -- Brendan O'Dea <bod@debian.org>  Tue, 14 Jun 2011 10:08:53 +1000
+
+help2man (1.40.2) unstable; urgency=low
+
+  * Remove a superfluous period from texinfo doc.
+  * Change footnote about supported languages to a simple paragraph.
+  * Update Italian translation (thanks to Sergio Zanchetta).
+  * Update Ukrainian translation (thanks to Yuri Chornoivan).
+  * Update French translation (thanks to David Prévot).
+  * Update Japanese translation (thanks to Yasumichi Akahoshi).
+  * Update Russian translation (thanks to Yuri Kozlov).
+  * Update Polish translation (thanks to Jakub Bogusz).
+
+ -- Brendan O'Dea <bod@debian.org>  Wed, 01 Jun 2011 08:04:45 +1000
+
+help2man (1.40.1) unstable; urgency=low
+
+  * Update texinfo docs with recommendations kindly provided by Karl
+    Berry.
+  * Document --libtool option.
+  * Fixup references to GNU Standards.
+  * Allow date format to be localised (thanks to Yasumichi Akahoshi).
+  * Add Japanese translation (thanks to Yasumichi Akahoshi).
+
+ -- Brendan O'Dea <bod@debian.org>  Sun, 29 May 2011 11:31:14 +1000
+
+help2man (1.39.4) unstable; urgency=low
+
+  * Update Italian translation (thanks to Sergio Zanchetta).
+
+ -- Brendan O'Dea <bod@debian.org>  Wed, 11 May 2011 22:58:55 +1000
+
+help2man (1.39.3) unstable; urgency=low
+
+  * Update French translation (thanks to David Prévot, closes: #620250).
+  * Update the "Localised man pages" section of the Texinfo docs and note that
+    translations are now handled through the Translation Project.
+  * Update German translation (thanks to Chris Leick, closes: #624401).
+  * Minor update to German translation as suggested by Werner Lemberg in
+    http://sourceforge.net/mailarchive/message.php?msg_id=26828512
+
+ -- Brendan O'Dea <bod@debian.org>  Sun, 01 May 2011 10:35:38 +1000
+
+help2man (1.39.2) unstable; urgency=low
+
+  * Update Russian translation (thanks to Yuri Kozlov).
+  * Update Ukranian translation (thanks to Yuri Chornoivan).
+  * Update Polish translation (thanks to Jakub Bogusz).
+  * Add Esperanto translation (thanks to Felipe Castro).
+  * Update Finnish translation (thanks to Tommi Vainikainen).
+
+ -- Brendan O'Dea <bod@debian.org>  Tue, 08 Mar 2011 22:33:01 +1100
+
+help2man (1.39.1) unstable; urgency=low
+
+  * Add option to remove `lt-' prefix for libtool programs (thanks to
+    Ben Asselstine).
+  * Add Ukranian translation (thanks to Yuri Chornoivan).
+  * Update Russian translation (thanks to Yuri Kozlov).
+  * Update Polish translation (thanks to Jakub Bogusz).
+
+ -- Brendan O'Dea <bod@debian.org>  Mon, 28 Feb 2011 11:15:44 +1100
+
+help2man (1.38.4) unstable; urgency=low
+
+  * Add Italian translation (thanks to Sergio Zanchetta).
+  * Don't double encode $date in the header.
+  * Use UTF-8 encoding for all manual pages.
+  * Add Greek translation (thanks to Michael Kotsarinis).
+  * Update French translation (thanks to David Prévot, closes: #590580).
+  * Update German translation (thanks to Helge Kreutzmann, closes: #590975).
+  * Use INSTALL_SCRIPT to install Perl script.
+  * Remove deprecated DH_COMPAT in debian/rules, adding debian/compat.
+  * Add ${misc:Depends}.
+  * Don't ignore errors from distclean.
+  * Fix Brazilian, Russian and Italian translations (placement of period was
+    causing text to be interpreted as a macro).
+  * Update standards version to 3.9.1.
+  * Add missing dependency on dpkg/install-info.
+  * Strip bindtextdomain.so preload.
+  * Install preload into $(libdir)/help2man.
+
+ -- Brendan O'Dea <bod@debian.org>  Tue, 28 Dec 2010 15:43:36 +1100
+
+help2man (1.38.3) unstable; urgency=low
+
+  * Apply patch from Mike Frysinger to allow "make install -j" to work.
+
+ -- Brendan O'Dea <bod@debian.org>  Sun, 04 Jul 2010 12:17:17 +1000
 
 help2man (1.38.2) unstable; urgency=low
 
