@@ -22,7 +22,7 @@ build-stamp:
 	touch build-stamp
 
 clean:
-	test README -nt help2man.PL # maintainer sanity check
+	# test README -nt help2man.PL # maintainer sanity check
 	dh_testdir
 	dh_testroot
 	[ ! -f Makefile ] || $(MAKE) distclean
