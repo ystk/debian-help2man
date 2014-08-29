@@ -1,8 +1,135 @@
-help2man (1.40.10skerlet1) unstable; urgency=low
+help2man (1.46.1) unstable; urgency=medium
 
-  * Disable sanity check for build
+  * Apply texinfo patch from Mario Blätterman.
+  * Rename aclocal macros with LOCAL_ prefix.
+  * Include "missing" program from automake in distribution.
+  * Add LOCAL_PROG_OR_MISSING macro.
+  * Add German translation of info page (thanks to Mario Blätterman).
+  * Change reference to standards to avoid spurious comma.
+  * Merge updates into texinfo translations.
+  * Update German translation (thanks to Mario Blättermann).
+  * Update Brazilian Portuguese translation (thanks to Rafael Ferreira).
+  * Update Vietnamese translation (thanks to Trần Ngọc Quân).
+  * Update Ukranian translation, and add translation of info page (thanks
+    to Yuri Chornoivan).
+  * Update Esperanto translation (thanks to Felipe Castro).
+  * Update French translation (thanks to David Prévot).
+  * Update Russian translation (thanks to Yuri Kozlov).
+  * Add Hungarian translation (thanks to Balázs Úr).
+  * Update Polish translation, and add translation of info page (thanks to
+    Jakub Bogusz).
+  * Move automake helper scripts into a build-aux sub-directory.
+  * Add a helper script to locate files in $VPATH.
+  * Add helper scripts to clean up texinfo translations:
+    + fixup-tex-pot: remove entries from template which should not be
+        translated.
+    + fixup-texi-trans: add the correct path for install-info and correct the
+        alignment of the main menu.
+  * Add Norwegian Bokmaal translation (thanks to Johnny A. Solbu)
 
- -- Skerlet Development Team <skerlet@swc.toshiba.co,jp>  Thu, 29 May 2014 19:11:31 +0900
+ -- Brendan O'Dea <bod@debian.org>  Sat, 26 Jul 2014 23:25:48 +1000
+
+help2man (1.45.1) unstable; urgency=low
+
+  * Skip additional blank lines following sections, and provide an
+    explicit method of adding sections (thanks to Mischa Williamson).
+  * Improve handling of tagged paragraphs when the body is on a following
+    line (thanks to Brian Campbell).
+  * Add escapes to adjust spacing of italic text at roman/italic
+    boundaries (thanks to Bjarni Ingi Gislason, closes: #742289)
+
+ -- Brendan O'Dea <bod@debian.org>  Mon, 24 Mar 2014 21:45:24 +1100
+
+help2man (1.44.1) unstable; urgency=low
+
+  * Perform shell word splitting on option lines in include files.
+  * Update Serbian translation (thanks to Мирослав Николић).
+  * Update German translation (thanks to Mario Blättermann).
+  * Update copyright years.
+  * Change distribution filename in README to help2man-VERSION.tar.xz
+  * Fix gitweb URL in README.
+
+ -- Brendan O'Dea <bod@debian.org>  Sun, 02 Feb 2014 15:07:59 +1100
+
+help2man (1.43.3) unstable; urgency=low
+
+  * Update Ukranian translation (thanks to Yuri Chornoivan).
+  * Update Esperanto translation (thanks to Felipe Castro).
+  * Update Polish translation (thanks to Jakub Bogusz).
+  * Update Russian translation (thanks to Yuri Kozlov).
+  * Update Japanese translation (thanks to Yasumichi Akahoshi).
+  * Update Vietnamese translation (thanks to Trần Ngọc Quân).
+  * Update French translation (thanks to David Prévot).
+
+ -- Brendan O'Dea <bod@debian.org>  Sat, 08 Jun 2013 22:31:52 +1000
+
+help2man (1.43.2) unstable; urgency=low
+
+  * Use the generic term "section" in the documentation rather than "name",
+    which could be confused to mean only the literal "NAME" section.
+
+ -- Brendan O'Dea <bod@debian.org>  Thu, 06 Jun 2013 07:13:29 +1000
+
+help2man (1.43.1) unstable; urgency=low
+
+  * Add explicit include syntax for prepending, replacing or appending to
+    generated output for a section (thanks to Daniil Baturin for the idea).
+  * Update Vietnamese translation (thanks to Trần Ngọc Quân).
+  * Update Esperanto translation (thanks to Felipe Castro).
+
+ -- Brendan O'Dea <bod@debian.org>  Tue, 04 Jun 2013 22:22:39 +1000
+
+help2man (1.42.1) unstable; urgency=low
+
+  * Update Vietnamese translation (thanks to Trần Ngọc Quân).
+  * Update Croatian translation (thanks to Tomislav Krznar).
+  * Consistently strip path and/or libtool "lt-" prefix from any instance
+    of $program derived from --help or --version (thanks to Eric Shattow
+    for identifying the issue).
+
+ -- Brendan O'Dea <bod@debian.org>  Tue, 28 May 2013 21:49:20 +1000
+
+help2man (1.41.2) unstable; urgency=low
+
+  * Update Vietnamese translation (thanks to Trần Ngọc Quân).
+  * Update Croatian translation (thanks to Tomislav Krznar).
+  * Update Brazilian Portuguese translation (thanks to Rodolfo Ribeiro
+    Gomes).
+
+ -- Brendan O'Dea <bod@debian.org>  Sun, 14 Apr 2013 07:05:43 +1000
+
+help2man (1.41.1) unstable; urgency=low
+
+  * Rename configure.in to .ac, and revise use of AC_INIT/AC_OUTPUT macros
+    to meet current autoconf guidelines.
+  * Add copyright headers to supporting files (GNU All-Permissive License).
+  * Fix section name comparisons ($sect is localised).
+  * Set filenames in italics (as suggested by Yann Soubeyrand).
+  * Suppress option/filename handling in EXAMPLES section.
+
+ -- Brendan O'Dea <bod@debian.org>  Sun, 30 Dec 2012 12:24:33 +1100
+
+help2man (1.40.13) unstable; urgency=low
+
+  * Add "Multi-Arch: foreign" control field to permit any installable
+    architecture to satisfy a build dependency when cross-building
+    packages (closes: #694586).
+
+ -- Brendan O'Dea <bod@debian.org>  Mon, 03 Dec 2012 23:01:36 +1100
+
+help2man (1.40.12) unstable; urgency=low
+
+  * Update Croatian translation (thanks to Tomislav Krznar).
+  * Fix updating of help2man.pot to occur only when help2man.PL is
+    changed, not help2man generated.
+
+ -- Brendan O'Dea <bod@debian.org>  Thu, 23 Aug 2012 11:43:05 +1000
+
+help2man (1.40.11) unstable; urgency=low
+
+  * Add Croatian translation (thanks to Tomislav Krznar).
+
+ -- Brendan O'Dea <bod@debian.org>  Sat, 28 Jul 2012 19:29:43 +1000
 
 help2man (1.40.10) unstable; urgency=low
 

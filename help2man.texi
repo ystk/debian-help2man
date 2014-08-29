@@ -3,6 +3,8 @@
 @settitle @command{help2man} Reference Manual
 @finalout
 
+@documentencoding UTF-8
+
 @dircategory Software development
 @direntry
 * help2man: (help2man).      Automatic manual page generation.
@@ -13,8 +15,8 @@ This file documents the GNU @command{help2man} command which produces
 simple manual pages from the @samp{--help} and @samp{--version} output
 of other commands.
 
-Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, 2010, 2011
-Free Software Foundation, Inc.
+Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, 2010, 2011, 2012,
+2013, 2014 Free Software Foundation, Inc.
 
 Permission is granted to make and distribute verbatim copies of
 this manual provided the copyright notice and this permission notice
@@ -45,8 +47,8 @@ by the Foundation.
 
 @page
 @vskip 0pt plus 1filll
-Copyright @copyright{} 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, 2010, 2011
-Free Software Foundation, Inc.
+Copyright @copyright{} 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, 2010,
+2011, 2012, 2013, 2014 Free Software Foundation, Inc.
 
 Permission is granted to make and distribute verbatim copies of
 this manual provided the copyright notice and this permission notice
@@ -209,7 +211,7 @@ Here are some recommendations for what to include in your
 best chance at generating a respectable man page, as well as
 benefitting users directly.
 
-@xref{Command-Line Interfaces, , , standards, GNU Coding Standards},
+See @ref{Command-Line Interfaces, , , standards, GNU Coding Standards}
 and @ref{Man Pages, , , standards, GNU Coding Standards}, for the
 official GNU standards relating to @option{--help} and man pages.
 
@@ -258,7 +260,7 @@ option only:
 @end smallexample
 
 For programs that take many options, it may be desirable to split the
-option list into sections such as `Global', `Output control', or
+option list into sections such as @samp{Global}, @samp{Output control}, or
 whatever makes sense in the particular case.  It is usually best to
 alphabetise (by short option name first, then long) within each section,
 or the entire list if there are no sections.
@@ -289,6 +291,14 @@ option descriptions for @option{--help} in the same structure as the
 rest of the option definition; you may wish to consider using these
 routines for option parsing instead of @code{getopt}.
 
+By default @command{help2man} has some heuristics for identifying
+manual page sections: a line consisting of @samp{Options:} for example
+will cause the following text to appear in the @code{OPTIONS} section,
+and a line beginning with @samp{Copyright} will appear in the
+@code{COPYRIGHT} section.  Outside of these heuristics, a line
+consisting of @samp{*Words*} will start a new section, and
+@samp{Words:} a new sub-section.
+
 @node Including text
 @chapter Including Additional Text in the Output
 
@@ -296,7 +306,7 @@ Additional static text may be included in the generated manual page by
 using the @samp{--include} and @samp{--opt-include} options
 (@pxref{Invoking help2man}).  While these files can be named anything,
 for consistency we suggest to use the extension @code{.h2m} for
-help2man include files.
+@command{help2man} include files.
 
 The format for files included with these option is simple:
 
@@ -327,10 +337,10 @@ NAME
 SYNOPSIS
 DESCRIPTION
 OPTIONS
+@emph{other}
 ENVIRONMENT
 FILES
 EXAMPLES
-@emph{other}
 AUTHOR
 REPORTING BUGS
 COPYRIGHT
@@ -345,6 +355,11 @@ required).
 Other sections are prepended to the automatically produced output for
 the standard sections given above, or included at @emph{other} (above)
 in the order they were encountered in the include file.
+
+Placement of the text within the section may be explicitly requested
+by using the syntax @samp{[<section]}, @samp{[=section]} or
+@samp{[>section]} to place the additional text before, in place of, or
+after the default output respectively.
 
 @node Makefile usage
 @chapter Using @command{help2man} With @command{make}

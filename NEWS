@@ -1,3 +1,37 @@
+Version 1.46		July 7, 2014
+
+  * Add German, Ukranian and Polish translations of info documentation.
+  * Add Hungarian and Norwegian Bokmaal translations.
+
+Version 1.45		March 24, 2014
+
+  * Add recognition of explicit section headings indicated with *Heading*.
+  * Improve handling of tagged paragraphs when body is on a following line.
+  * Add escapes to adjust spacing of italic text at roman/italic boundaries.
+
+Version 1.44		February 2, 2014
+
+  * Parse option lines in the header section of include files using shell word
+    splitting which allows quoting of multiple words and backslash-escaping of
+    spaces.
+
+Version 1.43		Jun 4, 2013
+
+  * Add explicit include syntax for prepending, replacing or appending to
+    generated output for a section.
+
+Version 1.42		May 28, 2013
+
+  * Consistently strip path and/or libtool `lt-' prefix from program
+    name.
+
+Version 1.41		December 31, 2012
+
+  * Set filenames in italics.
+  * Suppress option/filename handling in EXAMPLES section.
+  * Add Croatian translation.
+  * Add Serbian translation.
+
 Version 1.40		May 28, 2011
 
   * Update texinfo docs.
