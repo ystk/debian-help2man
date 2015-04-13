@@ -322,7 +322,7 @@ included in the distribution without requiring the end-user to have
 
    The value of ‘HELP2MAN’ may be set in ‘configure.in’ using either of:
 
-     AM_MISSING_PROG(HELP2MAN, help2man, $missing_dir)
+     AM_MISSING_PROG(HELP2MAN, help2man)
 
    for ‘automake’, or something like:
 
@@ -514,10 +514,10 @@ Node: Invoking help2man2683
 Node: --help recommendations5442
 Node: Including text9318
 Node: Makefile usage11320
-Node: Localised man pages12295
-Node: Example14199
-Node: Reports16819
-Node: Availability17273
+Node: Localised man pages12281
+Node: Example14185
+Node: Reports16805
+Node: Availability17259
 
 End Tag Table
 

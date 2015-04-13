@@ -1,3 +1,33 @@
+help2man (1.46.4) unstable; urgency=medium
+
+  * Include architecture.mk and buildflags.mk into rules to replace the
+    multiple calls to dpkg-architecture and to pick up the correct
+    hardening flags.
+  * Add $(LDFLAGS) when building preload to pick up -z relro (see
+    https://wiki.debian.org/Hardening).
+  * Minor correction to Norwegian Bokmaal translation.
+  * Minor correction to Brazilian Portuguese translation.
+  * Escape dashes in --name flag for groff (see lintian tag:
+    hyphen-used-as-minus-sign).
+  * Fix example using AM_MISSING_PROG in documentation: this macro no
+    longer requires the third argument.
+
+ -- Brendan O'Dea <bod@debian.org>  Fri, 10 Oct 2014 09:08:17 +1100
+
+help2man (1.46.3) unstable; urgency=medium
+
+  * Update Serbian translation (thanks to Мирослав Николић).
+  * Add Spanish translation (thanks to Antonio Ceballos).
+
+ -- Brendan O'Dea <bod@debian.org>  Sun, 21 Sep 2014 19:01:16 +1000
+
+help2man (1.46.2) unstable; urgency=medium
+
+  * Update French translation, and add translation of info page (thanks to
+    David Prévot).
+
+ -- Brendan O'Dea <bod@debian.org>  Sat, 06 Sep 2014 14:17:45 +1000
+
 help2man (1.46.1) unstable; urgency=medium
 
   * Apply texinfo patch from Mario Blätterman.
@@ -25,7 +55,7 @@ help2man (1.46.1) unstable; urgency=medium
         translated.
     + fixup-texi-trans: add the correct path for install-info and correct the
         alignment of the main menu.
-  * Add Norwegian Bokmaal translation (thanks to Johnny A. Solbu)
+  * Add Norwegian Bokmaal translation (thanks to Johnny A. Solbu).
 
  -- Brendan O'Dea <bod@debian.org>  Sat, 26 Jul 2014 23:25:48 +1000
 

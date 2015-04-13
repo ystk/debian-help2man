@@ -1,10 +1,10 @@
-		README for GNU help2man version 1.46.1
+		README for GNU help2man version 1.46.4
 
 help2man is a script to create simple man pages from the --help and
 --version output of programs.
 
   http://www.gnu.org/software/help2man/
-  ftp://ftp.gnu.org/gnu/help2man/help2man-1.46.1.tar.xz
+  ftp://ftp.gnu.org/gnu/help2man/help2man-1.46.4.tar.xz
 
   git://anonscm.debian.org/users/bod/help2man.git
   http://anonscm.debian.org/gitweb/?p=users/bod/help2man.git

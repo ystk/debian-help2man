@@ -334,7 +334,7 @@ użytkownik końcowy nie musi mieć zainstalowanego programu ‘help2man’.
    Wartość zmiennej ‘HELP2MAN’ można ustawić ‘configure.in’ używając na
 przykład:
 
-     AM_MISSING_PROG(HELP2MAN, help2man, $missing_dir)
+     AM_MISSING_PROG(HELP2MAN, help2man)
 
    w przypadku korzystania z narzędzia ‘automake’ albo:
 
@@ -525,10 +525,10 @@ Node: Uruchamianie help2man3066
 Node: Zalecenia --help6172
 Node: Dołączanie tekstu10409
 Node: Użycie Makefile12540
-Node: Zlokalizowane strony man13748
-Node: Przykład15867
-Node: Kontakt18764
-Node: Dostępność19239
+Node: Zlokalizowane strony man13734
+Node: Przykład15853
+Node: Kontakt18750
+Node: Dostępność19225
 
 End Tag Table
 

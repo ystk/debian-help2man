@@ -359,7 +359,7 @@ muss.
    Der Wert von ‘HELP2MAN’ kann in ‘configure.in’ entweder
 folgendermaßen festgelegt werden:
 
-     AM_MISSING_PROG(HELP2MAN, help2man, $missing_dir)
+     AM_MISSING_PROG(HELP2MAN, help2man)
 
    für ‘automake’, oder etwa so:
 
@@ -555,10 +555,10 @@ Node: Aufruf von help2man3194
 Node: Empfehlungen für --help6626
 Node: Einbeziehen von Text11367
 Node: Verwendung in Makefiles13745
-Node: Lokalisierte Handbuchseiten14919
-Node: Beispiel17212
-Node: Rückmeldungen19876
-Node: Bezugsquellen20415
+Node: Lokalisierte Handbuchseiten14905
+Node: Beispiel17198
+Node: Rückmeldungen19862
+Node: Bezugsquellen20401
 
 End Tag Table
 
