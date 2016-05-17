@@ -1,4 +1,4 @@
-help2man (1.38.2-skerlet1) unstable; urgency=low
+help2man (1.38.2skerlet1) unstable; urgency=low
 
   * Disable sanity check for build
 
